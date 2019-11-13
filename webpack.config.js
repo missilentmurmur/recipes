@@ -19,7 +19,7 @@ module.exports = {
             template: 'src/index.html'
         }),
         new CopyWebpackPlugin([
-            { from: 'src/assets', to: 'assets' },
+            { from: 'src/assets', to: 'assets' }
         ])
     ],
     devtool: 'inline-source-map',
