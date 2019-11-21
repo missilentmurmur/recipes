@@ -11,10 +11,27 @@
         <button id="randomRecipe">Random recipe</button>
         <button id="newRecipe">Add new recipe</button>
         <button id="listRecipes">See all recipes</button>
-
     </div>
-    <div id="container">
+    <div class="container" id="randomRecipePlace">
         <p>valami</p>
     </div>
+    <div class="container hidden" id="newRecipePlace">
+        <div id="form">
+            <h2>Add a new recipe</h2>
+            <p>Name</p>
+            <input id="nameInput" type="text" placeholder="recipe name goes here" value=" "/>
+            <p>Category: <select id="category">
+                categoryOptionsInHTML
+                </select> </p>
+            <p>Serves: <input id="servesInput" type="number"></p>
+            <p>Instructions</p>
+            <textarea id="instructionsInput"></textarea>
+            <button id='submit' type="button">Save</button>
+            </div>
+    </div>
+    <div class="container hidden" id="recipeListPlace">
+        <p>valami egeszen mas</p>
+    </div>
+
 </body>
 </html>

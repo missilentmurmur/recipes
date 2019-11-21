@@ -12,15 +12,17 @@ export const generateHash = () => {
 export class Recipe {
     name: string;
     hash: string;
-    longName: string;
     ingredients: Ingredient[];
     category: Category;
     serves: number;
-    directions: string;
+    instructions: string;
 
-    constructor(name) {
+    constructor(name,category,serves,instructions) {
         this.hash = generateHash();
         this.name = name;
+        this.category = category;
+        this.serves = serves;
+        this.instructions = instructions;
     };
 
     showShort() {
@@ -93,12 +95,14 @@ export class AllRecipes {
         localStorage.setItem('allRecipes', recipesString);
     }
 }
-
+/*
 const makaroni = new Recipe('sajtos makaroni');
 
 const receptek = new AllRecipes();
 receptek.add(makaroni);
-receptek.save();
+receptek.save();*/
+
+
 
 
 
