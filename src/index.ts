@@ -6,7 +6,8 @@ const randomRecipePlace = document.getElementById('randomRecipePlace');
 const newRecipePlace = document.getElementById('newRecipePlace');
 const recipeListPlace = document.getElementById('recipeListPlace');
 const submitFormButton = document.getElementById('submit');
-
+const nameInput = document.getElementById('nameInput') as HTMLInputElement;
+const categorySelect = document.getElementById('category') as HTMLSelectElement;
 
 const deleteContent = (div) => {
     while (div.hasChildNodes()) {
@@ -30,7 +31,7 @@ const formatCategoryOptions = () => {
     var options = '';
     for (let item in Category) {
         if (isNaN(Number(item))) {
-            options += '<option>' + item + '</option>';
+            options += '<option value="'  + item + '">' + item + '</option>';
         }
     }
     return options;
@@ -39,23 +40,28 @@ const formatCategoryOptions = () => {
 const categoryOptionsInHTML = formatCategoryOptions();
 
 
-const handleSubmit = (event) => {
-    const nameInput = document.getElementById('nameInput') as HTMLInputElement;
-    nameInput.addEventListener('onchange', () => {handleTextChanged(event)});
-    const text = nameInput.value;
-    //let text1 = nameInput.value;
-    console.log(nameInput, text);
+const handleSubmit = (event) => { //lehetne olyat is, hogy parameternek megadni, h melyik fieldekbol kerem a valuet, es akkor kiszedi?
+    const name = nameInput.value;
+    const category = categorySelect.value;
+    const servings = document.getElementById('servesInput') as HTMLInputElement;
+    const instructionsInput = document.getElementById('instructionsInput') as HTMLTextAreaElement;
+    console.log(name);
+    console.log(category);
+    console.log(servings.value);
+    console.log(instructionsInput.value);
+    const newRecipe = new Recipe(name,category,servings.value,instructionsInput.value);
+    allRecipes.add(newRecipe);
 };
 
 
 const showRecipe = () => {
-    //container.innerText = 'ez itt egy recept leirasa';
+
 };
 
 
 document.addEventListener("DOMContentLoaded", () => {
     const textbox = document.getElementById('textbox');
-    textbox.innerText = 'Kerek egy receptet!';
+    textbox.innerText = 'Kérek egy receptet!';
 
     const menu = document.getElementById('menu');
     //randomButton =
@@ -64,6 +70,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const randomRecipeButton = document.getElementById('randomRecipe');
     const newRecipeButton = document.getElementById('newRecipe');
     const allRecipesButton = document.getElementById('listRecipes');
+
+
+    nameInput.addEventListener('onchange', () => {handleTextChanged(event)});
 
     /*const valamiinput = document.getElementById('nameInput');
     valamiinput.addEventListener("input", function (event) {
@@ -101,8 +110,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     //nehany recept teszteleshez:
-    const zabkasa = new Recipe('zabkasa','breakfast', 2,'some instructions');
-    const tejbegriz = new Recipe('tejbegriz', 'breakfast', 2, 'some instructions');
+    //const zabkasa = new Recipe('zabkasa','breakfast', 2,'some instructions');
+    //const tejbegriz = new Recipe('tejbegriz', 'breakfast', 2, 'some instructions');
     
 
     /*
