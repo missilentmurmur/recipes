@@ -15,10 +15,16 @@ const deleteContent = (div) => {
     }
 };
 
+const showRecipe = () => {
+
+};
+
+
 const showList = () => {
     //let len = recipeList.length;
-    let item = allRecipes.load();
-
+    allRecipes.load();
+    let item = allRecipes.recipes;
+    console.log(item[0]);
     //for (let i=0, i<len, i++) {
 };
 
@@ -51,11 +57,6 @@ const handleSubmit = (event) => { //lehetne olyat is, hogy parameternek megadni,
     console.log(instructionsInput.value);
     const newRecipe = new Recipe(name,category,servings.value,instructionsInput.value);
     allRecipes.add(newRecipe);
-};
-
-
-const showRecipe = () => {
-
 };
 
 

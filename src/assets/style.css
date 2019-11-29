@@ -1,10 +1,10 @@
 body {
-    background-color: lemonchiffon;
+    background-color: #ffffb3;
     margin: 20px;
 }
 
 button {
-    background-color: mediumseagreen;
+    background-color: #86b300;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -15,25 +15,29 @@ button {
 }
 
 p {
-    color: red;
+
 }
 
 .hidden {
     display: none;
 }
 
+.container {
+    border-style: inset;
+    margin: 30px;
+    padding: 20px;
+}
+
 #textbox {
     margin: 30px;
-    font-size: 24px;
+    font-size: 30px;
+    border-style: inset;
+    padding: 20px;
 }
 
 #menu {
     margin: 30px;
 }
 
-.container {
-    margin: 30px;
 
-    border-style: inset;
-}
 
